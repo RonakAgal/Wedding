@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5E6AB" />
+      <stop offset="40%" stop-color="#C89D3C" />
+      <stop offset="70%" stop-color="#E9CF87" />
+      <stop offset="100%" stop-color="#987220" />
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B1E1E" />
+      <stop offset="100%" stop-color="#4A0E0E" />
+    </linearGradient>
+  </defs>
+
+  <!-- Royal Circular Maroon Badge -->
+  <circle cx="32" cy="32" r="30" fill="url(#bgGrad)" stroke="url(#goldGrad)" stroke-width="2.5" />
+  <circle cx="32" cy="32" r="26.5" fill="none" stroke="#F0DB9E" stroke-width="0.8" stroke-dasharray="2,2" opacity="0.6" />
+
+  <!-- Sacred Royal Kalash / Mangal Ghat Icon -->
+  <!-- Kalash Pot Body -->
+  <path d="M22 36 C22 45, 42 45, 42 36 C42 32, 38 29, 36 28 L28 28 C26 29, 22 32, 22 36 Z" fill="url(#goldGrad)" />
+  
+  <!-- Base Stand -->
+  <path d="M26 43 L38 43 L36 46 L28 46 Z" fill="url(#goldGrad)" />
+
+  <!-- Kalash Neck / Rim -->
+  <path d="M27 27 L37 27 L38 25 L26 25 Z" fill="#F0DB9E" />
+
+  <!-- Holy Swastik / Tilak on Pot -->
+  <circle cx="32" cy="36" r="2" fill="#8B1E1E" />
+
+  <!-- Mango Leaves (Amra Pallav) -->
+  <path d="M32 25 C28 20, 20 22, 22 26 C25 26, 30 25, 32 25 Z" fill="#2E7D32" opacity="0.9" />
+  <path d="M32 25 C36 20, 44 22, 42 26 C39 26, 34 25, 32 25 Z" fill="#2E7D32" opacity="0.9" />
+  <path d="M32 25 C32 17, 30 16, 32 14 C34 16, 32 17, 32 25 Z" fill="#2E7D32" opacity="0.9" />
+
+  <!-- Sacred Nariyal (Coconut with Tilak) -->
+  <path d="M28 25 C28 19, 36 19, 36 25 Z" fill="#8D5B4C" />
+  <path d="M32 16 L33.5 21 L32 20 L30.5 21 Z" fill="#FFC107" />
+
+  <!-- Top Crown Flame / Chhatra Dot -->
+  <circle cx="32" cy="11.5" r="1.5" fill="url(#goldGrad)" />
+</svg>
