@@ -15,6 +15,7 @@ import { GallerySection } from './components/sections/GallerySection';
 import { WardrobePlanner } from './components/WardrobePlanner';
 import { VenueSection } from './components/sections/VenueSection';
 import { WishesSection } from './components/sections/WishesSection';
+import { RoyalWeddingBot } from './components/RoyalWeddingBot';
 
 export function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -103,6 +104,9 @@ export function App() {
 
         {/* 7. Family Blessings, Helpline & Footer */}
         <Footer />
+
+        {/* 8. Royal Wedding AI Concierge (शाही सहायक) */}
+        {isOpen && <RoyalWeddingBot />}
       </div>
     </div>
   );
