@@ -133,64 +133,91 @@ export const RoyalWeddingBot: React.FC = () => {
 
   return (
     <>
-      {/* Floating Rajputana Trigger Button (Bottom-Right) */}
+      {/* Floating Rajputana Trigger Button (Bottom-Right) - Real-world compact circular FAB */}
       <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 select-none">
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.8 }}
+          animate={{ scale: 1, opacity: 1, y: isOpen ? 0 : [0, -4, 0] }}
+          transition={{
+            scale: { duration: 0.4, delay: 0.8 },
+            opacity: { duration: 0.4, delay: 0.8 },
+            y: { repeat: Infinity, duration: 3, ease: 'easeInOut' },
+          }}
           className="relative group"
         >
           {/* Subtle Ambient Pulse Halo */}
           {!isOpen && (
-            <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-[#C89D3C] to-[#8B1E1E] opacity-75 blur-sm animate-pulse group-hover:opacity-100 transition-opacity" />
+            <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-[#C89D3C] via-[#8B1E1E] to-[#C89D3C] opacity-75 blur-xs animate-pulse group-hover:opacity-100 transition-opacity" />
+          )}
+
+          {/* Floating Pill Tag (Real-world Chatbot Badge) */}
+          {!isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.3 }}
+              className="absolute -top-7 right-0 pointer-events-none px-2 py-0.5 rounded-full bg-[#FAF3E0] text-[#8B1E1E] border border-[#C89D3C] font-label text-[9px] font-bold shadow-md whitespace-nowrap flex items-center gap-1"
+            >
+              <span>शाही AI</span>
+              <Sparkles className="w-2.5 h-2.5 text-[#C89D3C] animate-pulse" />
+            </motion.div>
           )}
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="relative flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full bg-gradient-to-r from-[#8B1E1E] via-[#5A1111] to-[#8B1E1E] text-white border-2 border-[#C89D3C] shadow-[0_8px_25px_rgba(139,30,30,0.45)] hover:shadow-[0_12px_32px_rgba(200,157,60,0.55)] transition-all duration-300 cursor-pointer active:scale-95"
+            className="relative flex items-center justify-center w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-gradient-to-tr from-[#5A1111] via-[#8B1E1E] to-[#A52A2A] text-white border-2 border-[#C89D3C] shadow-[0_8px_25px_rgba(139,30,30,0.5)] hover:shadow-[0_12px_32px_rgba(200,157,60,0.6)] transition-shadow duration-300 cursor-pointer active:scale-90"
             aria-label={isOpen ? 'Close Royal Wedding AI Assistant' : 'Open Royal Wedding AI Assistant'}
           >
-            {isOpen ? (
-              <div className="flex items-center gap-2 px-1">
-                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/20 border border-[#C89D3C] flex items-center justify-center shrink-0">
-                  <X className="w-4 h-4 text-[#F0DB9E]" />
-                </div>
-                <span className="font-headline text-xs sm:text-sm font-bold text-white tracking-wide">
-                  बंद करें
-                </span>
-              </div>
-            ) : (
-              <>
-                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-[#FFFDF9] via-[#FAF3E0] to-[#F5E6C4] border-2 border-[#C89D3C] flex items-center justify-center shrink-0 shadow-sm text-[#8B1E1E]">
-                  <Bot className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#8B1E1E]" />
-                </div>
-
-                <div className="text-left pr-0.5">
-                  <span className="font-label text-[9px] sm:text-[10px] uppercase tracking-wider text-[#F0DB9E] block leading-none font-bold">
-                    शाही सहायक
-                  </span>
-                  <span className="font-headline text-[11px] sm:text-xs font-bold text-white block leading-tight mt-0.5">
-                    Wedding AI
-                  </span>
-                </div>
-
-                <Sparkles className="w-3.5 h-3.5 text-[#F0DB9E] animate-bounce shrink-0" />
-              </>
-            )}
+            <motion.div
+              key={isOpen ? 'open' : 'closed'}
+              initial={{ rotate: isOpen ? -90 : 90, scale: 0.6, opacity: 0 }}
+              animate={{ rotate: 0, scale: 1, opacity: 1 }}
+              exit={{ rotate: isOpen ? 90 : -90, scale: 0.6, opacity: 0 }}
+              transition={{ type: 'spring', stiffness: 450, damping: 22 }}
+              className="relative flex items-center justify-center"
+            >
+              {isOpen ? (
+                <X className="w-5 h-5 sm:w-6 sm:h-6 text-[#F0DB9E]" />
+              ) : (
+                <>
+                  <Bot className="w-5 h-5 sm:w-6 sm:h-6 text-[#F0DB9E]" />
+                  {/* Glowing Online Indicator */}
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 absolute -top-1 -right-1 border-2 border-[#8B1E1E] shadow-xs animate-pulse" />
+                </>
+              )}
+            </motion.div>
           </button>
         </motion.div>
       </div>
 
-      {/* Floating Royal Chatbot Modal Window */}
+      {/* Floating Royal Chatbot Modal Window with Spring-Pop Transition */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            transition={{ duration: 0.28, ease: 'easeOut' }}
-            className="fixed bottom-16 right-3 sm:bottom-22 sm:right-6 z-50 w-[calc(100vw-24px)] xs:w-[360px] sm:w-[400px] h-[520px] max-h-[82vh] rounded-3xl bg-[#FFFDF9] border-2 border-[#C89D3C] shadow-[0_20px_60px_rgba(0,0,0,0.35),0_0_40px_rgba(200,157,60,0.25)] flex flex-col overflow-hidden select-none"
+            initial={{ opacity: 0, scale: 0.2, y: 60, x: 20, rotate: -4 }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+              x: 0,
+              rotate: 0,
+              transition: {
+                type: 'spring',
+                damping: 24,
+                stiffness: 340,
+                mass: 0.85,
+              },
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0.25,
+              y: 50,
+              x: 15,
+              rotate: 3,
+              transition: { duration: 0.2, ease: 'easeIn' },
+            }}
+            style={{ transformOrigin: 'bottom right' }}
+            className="fixed bottom-18 right-3 sm:bottom-21 sm:right-6 z-50 w-[calc(100vw-24px)] xs:w-[350px] sm:w-[380px] h-[500px] max-h-[80vh] rounded-3xl bg-[#FFFDF9] border-2 border-[#C89D3C] shadow-[0_25px_60px_rgba(0,0,0,0.35),0_0_40px_rgba(200,157,60,0.25)] flex flex-col overflow-hidden select-none"
           >
             {/* Header: Royal Crimson Banner */}
             <div className="bg-gradient-to-r from-[#8B1E1E] via-[#5A1111] to-[#8B1E1E] text-white p-3.5 border-b-2 border-[#C89D3C] flex items-center justify-between shadow-md shrink-0">
