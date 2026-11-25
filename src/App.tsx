@@ -84,7 +84,7 @@ export function App() {
         <HeroSection hasScrolled={hasScrolled} />
 
         {/* 2. Interactive Save The Date Scratch Card */}
-        <section className="w-full max-w-xl sm:max-w-2xl md:max-w-3xl mx-auto px-4 sm:px-6 md:px-8 py-5 sm:py-8 overflow-hidden">
+        <section id="wedding-details" className="w-full max-w-xl sm:max-w-2xl md:max-w-3xl mx-auto px-4 sm:px-6 md:px-8 py-5 sm:py-8 overflow-hidden">
           <RoyalScratchCountdown />
         </section>
 

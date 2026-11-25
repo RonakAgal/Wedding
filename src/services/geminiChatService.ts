@@ -47,7 +47,7 @@ Verified Wedding Details:
      3. Wedding Carnival & Mela - 01:30 PM Onwards. Dress: Bright & Pastel Festive Chic.
      4. Ring Ceremony & Disco wali raat (DJ NIGHT) - 07:00 PM Onwards. Dress: Glamorous Indo-Western / Party Wear.
    - Day 2 (Saturday, 12 December 2026):
-     5. Shubh Mayra (Bhaat) - 09:30 AM Onwards. Dress: Traditional Rajputi Poshak / Kurta Pajama.
+     5. Shubh Mayra (Bhaat) - 09:30 AM Onwards. Dress: Traditional Rajasthani Poshak / Kurta Pajama.
      6. Shahi Barat Swagat - 06:30 PM Onwards. Dress: Royal Safa, Turbans & Traditional Sherwani.
      7. Grand Royal Reception & Varmala - 07:30 PM Onwards. Dress: Royal Ethnic / Jodhpuri Bandgala & Lehengas.
      8. Mangal Phere (Shubh Vivah) - Late night 12 Dec / 13 Dec early morning 03:00 AM Onwards. Dress: Sacred Traditional Vivah Attire.
@@ -113,7 +113,7 @@ export function getSmartLocalResponse(query: string, lang: 'hi' | 'en' = 'hi'): 
 
     // Specific Ceremony: Mayra / Bhaat
     if (q.includes('mayra') || q.includes('bhaat') || q.includes('chunari') || q.includes('nanihal')) {
-      return `👑 **Shubh Mayra (Auspicious Bhaat Ceremony):**\n\n• **Date:** Saturday, 12 December 2026\n• **Time:** 09:30 AM Onwards\n• **Highlights:** Warm Nanihal welcome, Shagun Chunari & traditional Mayra\n• **Dress Code:** Traditional Rajputi Poshak / Kurta Pajama 🌺`;
+      return `👑 **Shubh Mayra (Auspicious Bhaat Ceremony):**\n\n• **Date:** Saturday, 12 December 2026\n• **Time:** 09:30 AM Onwards\n• **Highlights:** Warm Nanihal welcome, Shagun Chunari & traditional Mayra\n• **Dress Code:** Traditional Rajasthani Poshak / Kurta Pajama 🌺`;
     }
 
     // Specific Ceremony: Barat
@@ -133,7 +133,7 @@ export function getSmartLocalResponse(query: string, lang: 'hi' | 'en' = 'hi'): 
 
     // Dress Codes General
     if (q.includes('dress') || q.includes('kapde') || q.includes('pehanna') || q.includes('attire') || q.includes('outfit')) {
-      return `👗 **Royal Wedding Dress Code Guide:**\n\n• **Ganpati Sthapana:** Traditional Yellow / Kesariya\n• **Kalash Yatra:** Traditional Marwari Ethnic\n• **Carnival & Fair:** Bright & Pastel Festive Chic\n• **DJ Night & Ring Ceremony:** Glamorous Indo-Western / Party Wear\n• **Shubh Mayra:** Traditional Rajputi Poshak / Kurta Pajama\n• **Barat Swagat:** Royal Safa & Traditional Sherwani\n• **Reception:** Royal Ethnic / Bandgala & Lehengas\n• **Mangal Pheras:** Sacred Traditional Vivah Attire`;
+      return `👗 **Royal Wedding Dress Code Guide:**\n\n• **Ganpati Sthapana:** Traditional Yellow / Kesariya\n• **Kalash Yatra:** Traditional Marwari Ethnic\n• **Carnival & Fair:** Bright & Pastel Festive Chic\n• **DJ Night & Ring Ceremony:** Glamorous Indo-Western / Party Wear\n• **Shubh Mayra:** Traditional Rajasthani Poshak / Kurta Pajama\n• **Barat Swagat:** Royal Safa & Traditional Sherwani\n• **Reception:** Royal Ethnic / Bandgala & Lehengas\n• **Mangal Pheras:** Sacred Traditional Vivah Attire`;
     }
 
     // Bride / Groom / Parents
@@ -198,7 +198,7 @@ export function getSmartLocalResponse(query: string, lang: 'hi' | 'en' = 'hi'): 
 
   // Specific Ceremony: Mayra / Bhaat
   if (q.includes('mayra') || q.includes('bhaat') || q.includes('chunari') || q.includes('nanihal')) {
-    return `👑 **शुभ मायरा (भात की पावन रस्म):**\n\n• **तारीख:** शनिवार, 12 दिसंबर 2026\n• **समय:** सुबह 09:30 बजे से\n• **हाइलाइट्स:** ननिहाल पक्ष का आगमन, शगुन की चुनरी व मंगल मायरा\n• **ड्रेस कोड:** Traditional Rajputi Poshak / Kurta Pajama 🌺`;
+    return `👑 **शुभ मायरा (भात की पावन रस्म):**\n\n• **तारीख:** शनिवार, 12 दिसंबर 2026\n• **समय:** सुबह 09:30 बजे से\n• **हाइलाइट्स:** ननिहाल पक्ष का आगमन, शगुन की चुनरी व मंगल मायरा\n• **ड्रेस कोड:** Traditional Rajasthani Poshak / Kurta Pajama 🌺`;
   }
 
   // Specific Ceremony: Barat
@@ -218,7 +218,7 @@ export function getSmartLocalResponse(query: string, lang: 'hi' | 'en' = 'hi'): 
 
   // Dress Codes General
   if (q.includes('dress') || q.includes('kapde') || q.includes('pehanna') || q.includes('attire') || q.includes('outfit')) {
-    return `👗 **शाही समारोह ड्रेस कोड गाइड:**\n\n• **गणपति स्थापना:** Traditional Yellow / Kesariya\n• **कलश यात्रा:** Traditional Marwari Ethnic\n• **कार्निवल व मेला:** Bright & Pastel Festive Chic\n• **DJ नाइट / रिंग सेरेमनी:** Glamorous Indo-Western / Party Wear\n• **शुभ मायरा:** Traditional Rajputi Poshak / Kurta Pajama\n• **बारात स्वागत:** Royal Safa & Traditional Sherwani\n• **रिसेप्शन:** Royal Ethnic / Bandgala & Lehengas\n• **मंगल फेरे:** Sacred Traditional Vivah Attire`;
+    return `👗 **शाही समारोह ड्रेस कोड गाइड:**\n\n• **गणपति स्थापना:** Traditional Yellow / Kesariya\n• **कलश यात्रा:** Traditional Marwari Ethnic\n• **कार्निवल व मेला:** Bright & Pastel Festive Chic\n• **DJ नाइट / रिंग सेरेमनी:** Glamorous Indo-Western / Party Wear\n• **शुभ मायरा:** Traditional Rajasthani Poshak / Kurta Pajama\n• **बारात स्वागत:** Royal Safa & Traditional Sherwani\n• **रिसेप्शन:** Royal Ethnic / Bandgala & Lehengas\n• **मंगल फेरे:** Sacred Traditional Vivah Attire`;
   }
 
   // Bride / Groom / Parents

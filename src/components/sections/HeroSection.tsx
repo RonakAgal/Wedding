@@ -8,7 +8,12 @@ interface HeroSectionProps {
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ hasScrolled }) => {
   const handleScrollDown = () => {
-    window.scrollTo({ top: window.innerHeight - 56, behavior: 'smooth' });
+    const detailsSection = document.getElementById('wedding-details');
+    if (detailsSection) {
+      detailsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      window.scrollTo({ top: window.innerHeight - 56, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -24,15 +29,32 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ hasScrolled }) => {
             className="w-full h-full object-cover object-center sm:object-contain block transition-transform duration-700 group-hover:scale-[1.01]"
           />
 
-          {/* Subtle Royal Scroll Down Cue for Mobile */}
+          {/* Top Right Royal "Scroll Down" Indicator Button */}
           <button
             onClick={handleScrollDown}
-            className={`absolute bottom-3 left-1/2 -translate-x-1/2 flex flex-col items-center gap-0.5 text-[#8B1E1E] sm:hidden transition-all duration-500 cursor-pointer ${
-              hasScrolled ? 'opacity-0 pointer-events-none scale-75' : 'opacity-85 animate-bounce'
+            className={`absolute top-3.5 right-3.5 sm:top-5 sm:right-5 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#8B1E1E]/95 hover:bg-[#8B1E1E] text-[#F0DB9E] border border-[#C89D3C] shadow-[0_4px_15px_rgba(139,30,30,0.35)] backdrop-blur-sm transition-all duration-500 cursor-pointer active:scale-95 hover:scale-105 ${
+              hasScrolled ? 'opacity-0 pointer-events-none scale-75' : 'opacity-100 animate-bounce'
+            }`}
+            aria-label="Scroll down to view wedding details"
+          >
+            <span className="font-label text-[10px] sm:text-xs font-bold tracking-wider uppercase text-[#F0DB9E] drop-shadow-sm">
+              Scroll Down
+            </span>
+            <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#F0DB9E] stroke-[2.5]" />
+          </button>
+
+          {/* Bottom Royal Scroll Down Cue */}
+          <button
+            onClick={handleScrollDown}
+            className={`absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FBF7EE]/90 border border-[#C89D3C]/60 text-[#8B1E1E] shadow-md backdrop-blur-sm sm:hidden transition-all duration-500 cursor-pointer ${
+              hasScrolled ? 'opacity-0 pointer-events-none scale-75' : 'opacity-90 animate-bounce'
             }`}
             aria-label="Scroll to celebration details"
           >
-            <ChevronDown className="w-6 h-6 stroke-[2.5] drop-shadow-sm" />
+            <span className="font-label text-[9.5px] font-bold tracking-wider uppercase text-[#8B1E1E]">
+              Scroll Down
+            </span>
+            <ChevronDown className="w-3.5 h-3.5 stroke-[2.5]" />
           </button>
         </div>
       </section>
